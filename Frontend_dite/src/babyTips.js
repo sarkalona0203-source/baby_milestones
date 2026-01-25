@@ -124,5 +124,12 @@ export const babyTips = [
     title: "Tvrdé ořechy a syrová vejce",
     description: "Tvrdé ořechy a syrová vejce nejsou vhodné do 18 měsíců. Vždy dávejte měkké a bezpečné varianty.",
     youtube: null
-  }
+  },
+  {
+  id: 18,
+  category: "Pohyb",
+  title: "Lezení a plazení jsou důležité",
+  description: "Některé děti mohou fázi lezení po čtyřech přeskočit a přejít rovnou ke stání nebo chůzi. Lezení je však velmi důležité pro posílení svalů, zdravý vývoj páteře a koordinaci pohybů. Pokud je to možné, je vhodné dítě k lezení přirozeně podporovat, například hrou na zemi nebo motivací pomocí hraček.",
+  youtube: null
+}
 ];

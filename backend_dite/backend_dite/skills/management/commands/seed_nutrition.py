@@ -15,7 +15,7 @@ class Command(BaseCommand):
                 "max_age_months": 4,
                 "title": "Mateřské mléko nebo umělá výživa",
                 "text": "Dítě by mělo být výhradně kojeno nebo krmeno umělou výživou. Pevná strava ani příkrmy se zatím nedoporučují.",
-                "type": "info"
+                "type": "feeding"
             },
 
             # 5–6 měsíců – začátek příkrmů
@@ -24,14 +24,14 @@ class Command(BaseCommand):
                 "max_age_months": 6,
                 "title": "Začátek příkrmů",
                 "text": "Od 5.–6. měsíce lze začít s příkrmy. Nejvhodnější jsou hladká zeleninová pyré bez soli a cukru. Příkrm je doplňkem, hlavní výživou zůstává mléko.",
-                "type": "info"
+                "type": "feeding"
             },
             {
                 "min_age_months": 6,
                 "max_age_months": 6,
                 "title": "Množství příkrmu",
                 "text": "V 6 měsících dítě obvykle sní přibližně 50–150 g příkrmu denně. Zbytek denního příjmu tvoří mateřské mléko nebo umělá výživa.",
-                "type": "info"
+                "type": "feeding"
             },
 
             # 7–8 měsíců
@@ -40,7 +40,7 @@ class Command(BaseCommand):
                 "max_age_months": 8,
                 "title": "Hutnější konzistence",
                 "text": "Postupně lze zvyšovat hustotu příkrmů. Dítě se učí pracovat s lžičkou a novými chutěmi.",
-                "type": "info"
+                "type": "feeding"
             },
 
             # kousky
@@ -49,7 +49,7 @@ class Command(BaseCommand):
                 "max_age_months": 10,
                 "title": "Kousky v jídle",
                 "text": "Od 8. měsíce lze postupně zavádět měkké kousky jídla. Dítě se učí kousat a žvýkat. Kousky musí být dobře měkké a malé.",
-                "type": "info"
+                "type": "feeding"
             },
 
             # těstoviny
@@ -84,7 +84,7 @@ class Command(BaseCommand):
                 "max_age_months": 15,
                 "title": "Přechod na běžnou stravu",
                 "text": "Dítě jí měkkou běžnou stravu rodičů. Doporučeno 3 jídla denně + mléko dle potřeby. Porce cca 200–250 g jídla.",
-                "type": "info"
+                "type": "feeding"
             },
             # 15–18 měsíců
             {
@@ -92,7 +92,7 @@ class Command(BaseCommand):
                 "max_age_months": 18,
                 "title": "Postupné zvyšování porcí",
                 "text": "Dítě jí téměř běžnou stravu, kousky musí být měkké a malé. Doporučeno 3–4 jídla denně + mléko dle potřeby. Porce cca 250–300 g jídla.",
-                "type": "info"
+                "type": "feeding"
             },            # varování – tvrdé ořechy a syrová vejce
             {
                 "min_age_months": 0,

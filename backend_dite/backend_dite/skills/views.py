@@ -3,7 +3,6 @@ from rest_framework.response import Response
 from .models import Skill, NutritionGuide
 from .serializers import SkillSerializer
 
-
 class SkillListView(APIView):
     def get(self, request):
         age_input = request.GET.get("age")

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { babyTips } from "./babyTips";
-
+import { getSkillsAndNutrition } from "./skillsApi";
 function App() {
   const [dob, setDob] = useState("");
   const [ageMonths, setAgeMonths] = useState(null);
@@ -24,31 +24,31 @@ function App() {
 
   // Получение навыков и питания с сервера при выборе даты
   useEffect(() => {
-    if (!dob) return;
+  if (!dob) return;
 
-    const months = calculateAgeInMonths(dob);
-    if (months < 0) {
-      setAgeMonths(null);
-      setSkills([]);
-      return;
-    }
+  const months = calculateAgeInMonths(dob);
+  if (months < 0) {
+    setAgeMonths(null);
+    setSkills([]);
+    return;
+  }
 
-    setAgeMonths(months);
+  setAgeMonths(months);
 
-    fetch(`http://127.0.0.1:8000/api/skills/?age=${months}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setSkills(data.skills || []);
+  fetch(`${process.env.REACT_APP_API_URL}/skills/?age=${months}`)
+    .then((res) => res.json())
+    .then((data) => {
+      setSkills(data.skills || []);
 
-        const grouped = { warning: [], feeding: [] };
-        (data.nutrition || []).forEach((tip) => {
-          if (tip.type === "warning") grouped.warning.push(tip);
-          else grouped.feeding.push(tip);
-        });
-        setNutrition(grouped);
-      })
-      .catch(() => setSkills([]));
-  }, [dob]);
+      const grouped = { warning: [], feeding: [] };
+      (data.nutrition || []).forEach((tip) => {
+        if (tip.type === "warning") grouped.warning.push(tip);
+        else grouped.feeding.push(tip);
+      });
+      setNutrition(grouped);
+    })
+    .catch(() => setSkills([]));
+}, [dob]);
 
   // Группировка советов по категориям
   const tipsByCategory = babyTips.reduce((acc, tip) => {

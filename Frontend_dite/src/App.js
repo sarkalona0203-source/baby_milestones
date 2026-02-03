@@ -30,14 +30,18 @@ function App() {
   if (months < 0) {
     setAgeMonths(null);
     setSkills([]);
+    setNutrition({ warning: [], feeding: [] });
     return;
   }
 
   setAgeMonths(months);
 
-  fetch(`${process.env.REACT_APP_API_URL}/skills/?age=${months}`)
-    .then((res) => res.json())
-    .then((data) => {
+  const fetchData = async () => {
+    try {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/skills/?age=${months}`);
+      if (!res.ok) throw new Error(`Ошибка: ${res.status}`);
+      const data = await res.json();
+
       setSkills(data.skills || []);
 
       const grouped = { warning: [], feeding: [] };
@@ -46,10 +50,16 @@ function App() {
         else grouped.feeding.push(tip);
       });
       setNutrition(grouped);
-    })
-    .catch(() => setSkills([]));
-}, [dob]);
 
+    } catch (err) {
+      console.error("Ошибка fetch:", err);
+      setSkills([]);
+      setNutrition({ warning: [], feeding: [] });
+    }
+  };
+
+  fetchData();
+}, [dob]);
   // Группировка советов по категориям
   const tipsByCategory = babyTips.reduce((acc, tip) => {
     if (!acc[tip.category]) acc[tip.category] = [];

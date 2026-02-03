@@ -128,6 +128,7 @@ USE_TZ = True
 # ------------------------------------------------------------------------------
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://baby-milestones-2.onrender.com",
 ]
 
 # ------------------------------------------------------------------------------
@@ -147,3 +148,11 @@ MEDIA_ROOT = BASE_DIR / "media"
 # DEFAULTS
 # ------------------------------------------------------------------------------
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+TEMPLATES[0]["DIRS"] = [
+    BASE_DIR / "Frontend_dite" / "build"
+]
+
+STATICFILES_DIRS = [
+    BASE_DIR / "Frontend_dite" / "build" / "static"
+]

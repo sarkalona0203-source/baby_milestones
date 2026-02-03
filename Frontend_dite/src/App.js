@@ -38,7 +38,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/skills/?age=${months}`);
+      const res = await fetch(`${process.env.REACT_APP_API_URL}?age=${months}`);
       if (!res.ok) throw new Error(`Ошибка: ${res.status}`);
       const data = await res.json();
 

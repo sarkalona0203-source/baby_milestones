@@ -129,6 +129,7 @@ USE_TZ = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://baby-milestones-2.onrender.com",
+    "https://baby-milestones-c8bs.onrender.com"
 ]
 
 # ------------------------------------------------------------------------------

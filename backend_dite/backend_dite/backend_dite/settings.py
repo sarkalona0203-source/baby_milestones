@@ -149,10 +149,3 @@ MEDIA_ROOT = BASE_DIR / "media"
 # ------------------------------------------------------------------------------
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-TEMPLATES[0]["DIRS"] = [
-    BASE_DIR / "Frontend_dite" / "build"
-]
-
-STATICFILES_DIRS = [
-    BASE_DIR / "Frontend_dite" / "build" / "static"
-]

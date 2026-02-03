@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { babyTips } from "./babyTips";
-import { getSkillsAndNutrition } from "./skillsApi";
+
 function App() {
   const [dob, setDob] = useState("");
   const [ageMonths, setAgeMonths] = useState(null);
